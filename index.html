@@ -7,11 +7,9 @@
     <link rel="stylesheet" href="main.css">
 </head>
 <body>
-
-
+<!--this will be my template to use to learn this methodology-->
 
 <div id="application-root"></div>
-
 
 <!--React library-->
 <script src="https://unpkg.com/react@16/umd/react.development.js">
@@ -27,23 +25,27 @@
 
 <!--our JSX & React code-->
 <script type="text/babel">
-    /*
-    * using 'type="text/babel"' is too slow for production code 
-    * only use it for demo/learning purposes such as this assignment
-    */
+//NOTE: only use 'type="text/babel"' for demo/learning purposes//
 
-    // Our code will go here //
+//////* THIS IS YOUR APP COMPONENT *//////
+function App(props) {
+  return (
+    <header>
+      {props.children}
+    </header>
+  );
+}
 
-    const appRoot = document.querySelector('#application-root');
-
-    // const helloWorldH1 = React.createElement('h1', null, 'Hello, world!');
-    const helloWorldH1 = <h1>Hello, world!</h1>;
-
-    ReactDOM.render(helloWorldH1, appRoot);
+//////* HTML Elements get "nested" inside our 'APP' *//////
+ReactDOM.render(
+  <App className='my-class'>
+    <h1>Current Page Title!</h1>
+    <h2>Hey'der Bobby's Boy</h2>
+  </App>,
+  document.querySelector('#application-root')
+);
 
 </script>
-    
 </body>
 </html>
 
-<!--this will be my template to use to learn this methodology-->

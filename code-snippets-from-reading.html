@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Here you can find Sally contact information">
+    <title>Sally contact</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+<!--this will be my template to use to learn this methodology-->
+
+<div id="application-root"></div>
+
+<!--React library-->
+<script src="https://unpkg.com/react@16/umd/react.development.js">
+</script>
+
+<!--ReactDOM library-->
+<script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js">
+</script>
+
+<!--JSX/Babel loaded to HTML-->
+<script src="https://unpkg.com/babel-standalone@6/babel.min.js">
+</script>
+
+<!--our JSX & React code-->
+<script type="text/babel">
+    //NOTE: only use 'type="text/babel"' for demo/learning purposes//
+    
+
+
+// App Component
+function App() {
+  return (
+    <div>
+      <h1>Hello, everyone!</h1>
+      <p>We think</p>
+      <ul>
+        <li>React</li>
+        <li>is</li>
+        <li>brilliant!</li>
+      </ul>
+    </div>
+  );
+};
+
+// using the App component:
+// insert the App's element tree into the #application-root
+ReactDOM.render(
+  <App />,
+  document.querySelector('#application-root')
+); 
+
+
+</script>
+</body>
+</html>
+
+<!--VVV PREVIOUS CODE SNIPPETS FROM READING VVV--
+//const appRoot = document.querySelector('#application-root');
+//const helloWorldH1 = React.createElement('h1', null, 'Hello, world!');
+//const helloWorldH1 = <h1>Hello, world!</h1>;
+
+//ReactDOM.render(helloWorldH1, appRoot);
+ReactDOM.render(
+/* 1st argument is our 'app' (<div> with element 'branches') */
+<div>
+<h1>Hello, world!</h1>
+<p>How are you today?</p>
+<h2>Look what React can do!</h2>
+</div>,
+
+/* 2nd argument is the existing HTML element 
+(<div id='application-root'>) 
+that we are inserting our 1st argument (our 'app') */
+document.querySelector('#application-root')
+);
+-->
+
+<!--
+const anchor = (
+<a href='https://thinkful.com' target='_blank'>
+Thinkful
+</a>
+);
+
+//using backticks instead of double or single quotes, 
+//we have to wrap the prop's value in curly braces
+const anchor = (
+<a href={`https://thinkful.com`} target={`_blank`}>
+Thinkful
+</a>
+);
+
+//We would also do this if we want to use 
+//variables for the props' values
+const thinkfulAddress = 'https://thinkful.com';
+const target = '_blank';
+const content = 'Thinkful'
+
+const anchor = (
+<a href={thinkfulAddress} target={target}>
+{content}
+</a>
+);
+-->
+
+<!--
+// App Component
+function App(props) {
+console.log(props);
+return (
+//uses the assigned value of key 'className' in object 'props'
+//must use curly braces (instead of quotes) since the value is a variable  
+<span id='app-id' className={props.className}>
+My App
+</span>
+);
+}
+
+
+// using the App component:
+// insert the App's element tree into the #application-root
+ReactDOM.render(
+// Add a 'className' to the App
+<App className='new-class-name' />,
+document.querySelector('#application-root')
+);
+-->
+
+
+<!--
+function App(props) {
+console.log(props)
+return (
+<span>
+My App
+</span>
+);
+}
+
+ReactDOM.render(
+<App
+className='new-class-name'
+foo='bar'
+boolProp={false}
+numberProp={123}
+objectProp={{ baz: 'buzz' }}
+arrayProp={[ '3', '2', '1' ]}
+/>,
+document.querySelector('#application-root')
+);
+-->
